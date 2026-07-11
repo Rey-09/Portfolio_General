@@ -1,0 +1,568 @@
+/* Mengambil font modern dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variabel Warna (Light Mode) */
+:root {
+    --bg-color: #f4f7f6;
+    --sidebar-bg: #ffffff;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --accent-color: #6c5ce7;
+    --hover-bg: #f1f2f6;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+}
+
+/* Variabel Warna (Dark Mode) */
+[data-theme="dark"] {
+    --bg-color: #0f1115;
+    --sidebar-bg: #1a1d24;
+    --text-main: #f1f2f6;
+    --text-muted: #b2bec3;
+    --accent-color: #a29bfe;
+    --hover-bg: #2d3436;
+    --card-bg: #222630;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+html {
+    scroll-behavior: smooth; /* Animasi scroll */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+}
+
+/* Kelas untuk mematikan animasi */
+body.no-animations *, 
+body.no-animations html {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+}
+
+.profile-area h2 {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    list-style: none;
+    flex: 1;
+}
+
+.nav-links li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.nav-links a i {
+    width: 25px;
+    color: var(--accent-color);
+}
+
+.nav-links a:hover {
+    background-color: var(--hover-bg);
+    transform: translateX(5px);
+}
+
+/* Submenu / Dropdown */
+.submenu {
+    list-style: none;
+    padding-left: 2.5rem;
+    display: none; /* Sembunyikan default */
+    margin-top: 0.5rem;
+}
+
+.submenu a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    color: var(--text-muted);
+}
+
+.dropdown.active .submenu {
+    display: block;
+}
+.dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Controls (Bottom of Sidebar) */
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-btn, .btn-download {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.control-btn {
+    background-color: var(--hover-bg);
+    color: var(--text-main);
+}
+
+.btn-download {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content Styling */
+.content {
+    margin-left: 280px;
+    padding: 3rem;
+    width: 100%;
+}
+
+.section-box {
+    margin-bottom: 4rem;
+    padding-top: 2rem;
+}
+
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent-color); }
+p { color: var(--text-muted); line-height: 1.6; }
+
+/* Grid untuk Project */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* --- TAMBAHAN STYLE UNTUK FITUR BARU --- */
+
+/* List Container (Education & Certificates) */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.list-item {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+}
+.list-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.list-item .date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Styled List (Coursework) */
+.styled-list {
+    list-style: none;
+}
+.styled-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--hover-bg);
+    position: relative;
+    padding-left: 1.5rem;
+}
+.styled-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Skills Tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-tag {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+}
+.skill-tag:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--hover-bg);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    font-family: inherit;
+}
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.btn-submit:hover {
+    opacity: 0.9;
+}
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.social-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+.social-links i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+
+
+/* --- HERO SECTION (HOME) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    min-height: 80vh; /* Agar berada di tengah layar secara vertikal */
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text .highlight {
+    color: var(--accent-color);
+}
+
+.role-text {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+/* Tombol di Home */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Animasi Bingkai Foto (Blob) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.blob-wrapper img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    /* Animasi bergerak */
+    animation: morph 8s ease-in-out infinite;
+    /* Bentuk bingkai asimetris */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    border: 5px solid var(--accent-color);
+}
+
+@keyframes morph {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* Responsif untuk Layar Kecil (Tablet/HP) */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .blob-wrapper img {
+        width: 280px;
+        height: 280px;
+    }
+}/* --- STYLE UNTUK GALERI GESER DI PROJECT --- */
+.project-gallery {
+    display: flex;
+    gap: 10px;               /* Jarak antar gambar */
+    overflow-x: auto;        /* Mengaktifkan scroll horizontal */
+    scroll-snap-type: x mandatory; /* Bikin gambar otomatis nge-pas di tengah saat digeser */
+    margin-bottom: 1rem;
+    padding-bottom: 8px;     /* Ruang untuk scrollbar */
+}
+
+/* Mempercantik tampilan Scrollbar di bawah gambar */
+.project-gallery::-webkit-scrollbar {
+    height: 6px; /* Ketebalan scrollbar */
+}
+.project-gallery::-webkit-scrollbar-track {
+    background: var(--hover-bg); 
+    border-radius: 10px;
+}
+.project-gallery::-webkit-scrollbar-thumb {
+    background: var(--accent-color); 
+    border-radius: 10px;
+}
+
+/* Ukuran dan format gambar di dalam galeri */
+.project-gallery img {
+    flex: 0 0 100%;          /* Lebar gambar 100% dari kartu, biar tidak menyusut */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    scroll-snap-align: center; /* Titik henti geser ada di tengah gambar */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- STYLE UNTUK GALLERY DENGAN DESKRIPSI --- */
+.gallery-grid {
+    display: grid;
+    /* Lebar minimal kartu diperbesar sedikit biar teksnya enak dibaca */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Membungkus gambar dan teks jadi satu kartu */
+.gallery-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden; /* Biar ujung gambar ikut melengkung sesuai bentuk kartu */
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efek saat kartu foto diarahkan mouse */
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Setelan gambarnya */
+.gallery-item img {
+    width: 100%;
+    height: 200px;         /* Tinggi foto diseragamkan biar rapi */
+    object-fit: cover;     /* Memotong proporsional jika beda ukuran */
+    border-radius: 0;      /* Direset karena sudah diatur oleh .gallery-item */
+    transition: transform 0.3s ease;
+}
+
+/* Bagian area teks di bawah foto */
+.gallery-caption {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Mendorong agar kartu tingginya seimbang jika teksnya panjang */
+}
+
+.gallery-caption h3 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-caption p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0; /* Menghilangkan jarak berlebih di bawah */
+}

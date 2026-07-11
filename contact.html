@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <div class="profile-area">
+            <h2>Portfolio.</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-laptop-code"></i> Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="controls">
+            <button id="darkModeToggle" class="control-btn"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+            <button id="animationToggle" class="control-btn"><i class="fas fa-magic"></i> <span>Animations: ON</span></button>
+            <a href="CV_RIEKA ZALSA NABILA.pdf" download class="btn-download"><i class="fas fa-file-download"></i> Download CV</a>
+        </div>
+    </nav>
+
+    <!-- KONTEN HALAMAN CONTACT -->
+    <main class="content">
+        <section class="section-box fade-in">
+            <h2>📞 Contact Me</h2>
+            <p>Mari terhubung! Silakan kirim pesan melalui form di bawah atau hubungi saya lewat media sosial.</p>
+            
+            <div class="contact-container">
+                <!-- Form Kontak -->
+                <form class="contact-form" id="whatsappForm">
+                    <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                    <input type="email" id="email" placeholder="Email Anda" required>
+                    <textarea id="pesan" rows="5" placeholder="Pesan Anda" required></textarea>
+                    
+                    <!-- Saya ganti icon kertas menjadi icon WhatsApp agar user tahu -->
+                    <button type="submit" class="btn-submit" style="background-color: #25D366;">
+                        Kirim via WhatsApp <i class="fab fa-whatsapp"></i>
+                    </button>
+                </form>
+                
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rieka-zalsa-nabila-5a4732412" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Rey-09/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://instagram.com/rkzlsnbl" target="_blank"><i class="fab fa-instagram"></i> Instagram-Character🎨</a>
+                    <a href="https://instagram.com/my.sun09" target="_blank"><i class="fab fa-instagram"></i> Instagram-Chibi🐱</a>
+                    <a href="mailto:riekazalsan@gmail.com"><i class="fas fa-envelope"></i> riekazalsan@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

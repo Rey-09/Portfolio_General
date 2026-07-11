@@ -1,0 +1,12 @@
+ <main class="content">
+        <section class="section-box fade-in">
+            <h1>Halo, Saya <span style="color: var(--accent-color);">Rieka Zalsa Nabila</span></h1>
+            <p>Selamat datang di portfolio saya. Saya adalah mahasiswa Sistem Informasi yang memiliki ketertarikan pada Analisis Sistem, UI/UX Design, ERP, Business Process Improvement, dan Business Process Mapping.</p>
+            <br>
+            <p>Saya memiliki minat dalam memahami bagaimana sebuah bisnis berjalan melalui analisis kebutuhan, pemetaan proses bisnis, serta perancangan solusi digital yang lebih efektif dan efisien. Saya terbiasa melakukan business process mapping, membuat flow process, menganalisis kebutuhan sistem, serta merancang solusi berdasarkan kebutuhan pengguna dan bisnis.</p>
+             <br>
+            <p>Melalui berbagai project akademik dan pengalaman menggunakan sistem ERP, saya terus mengembangkan kemampuan dalam menghubungkan teknologi dengan proses bisnis untuk menciptakan solusi yang memberikan nilai tambah.</p>
+             <br>
+            <p>Silakan jelajahi portfolio ini untuk melihat profil, pendidikan, project, dan karya yang telah saya kerjakan✨</p>
+        </section>
+    </main>
